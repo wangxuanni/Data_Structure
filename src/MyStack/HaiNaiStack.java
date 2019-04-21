@@ -1,15 +1,15 @@
 package MyStack;
 
-//
+
 
 public class HaiNaiStack<T> {
- /*   private T []data;
+    private T[] data;
     private int size;
     private int top = 0; // 指向栈的顶部
 
     public HaiNaiStack(int size) {
         this.size = size;
-        this.data = new <T> T data [size];
+        this.data = new <T>[size];
     }
 
     public void push(T num) {
@@ -39,6 +39,6 @@ public class HaiNaiStack<T> {
         System.out.println("出栈操作：" + stc.getTop());
 
     }
-*/
+
 
 }
