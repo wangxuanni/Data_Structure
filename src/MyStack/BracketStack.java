@@ -3,7 +3,6 @@ package MyStack;
 import java.beans.Expression;
 import java.io.IOException;
 import java.util.Stack;
-//bug粗心把stc.pop() !=”{“，改了之后还要该栈的泛型为Character
 public class BracketStack {
 
     public static void main(String args[]) {
@@ -38,8 +37,7 @@ public class BracketStack {
                         break;
 
             }
-            System.out.println(!failed);              //在循环体输出可以作为一种调试方法
-
+            System.out.println(!failed);
 
             }
         System.out.println("表达式是否匹配"+!failed);

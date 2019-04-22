@@ -1,7 +1,7 @@
 package Link;
 
 import java.util.HashSet;
-
+//链表常见题目
 public class ListTest {
     public static void main(String[] args) {
 //　{7,4,0,7,5},{2,7,2,3,4}   返回：{9,1,3,0,0,1}
@@ -23,7 +23,7 @@ public class ListTest {
         deleteCopy(in2);
         System.out.println(in2);
 
-    }//链表加法
+    }//1、两个链表加法
 
     static void deleteCopy(LinkList ll) {
         HashSet hs = new HashSet();

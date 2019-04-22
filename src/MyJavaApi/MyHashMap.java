@@ -1,5 +1,5 @@
 package MyJavaApi;
-
+//Î´ÊµÏÖºìºÚÊ÷µÄHashMap
 public class MyHashMap<K, V> {
 
 
