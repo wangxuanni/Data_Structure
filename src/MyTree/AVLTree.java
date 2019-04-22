@@ -1,6 +1,19 @@
 package MyTree;
 // 涉及到的类前面博客都有
 public class AVLTree<K, V> extends BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
+    public static void main(String[] args) {
+        AVLTree avlt=new AVLTree();
+        avlt.insert(32,1);
+        avlt.insert(2,1);
+        avlt.insert(3,1);
+        avlt.insert(6,1);
+        avlt.insert(9,1);
+        avlt.insert(23,1);
+        avlt.insert(11,1);
+        avlt.insert(4,1);
+        System.out.println(avlt.size);
+    }
+
     @Override
     public BSTNode<K, V> insert(K key, V value) {
         // 先按bst的方式来插入，再调整

@@ -12,6 +12,18 @@ import java.util.function.Consumer;
  *
  */
 public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
+    public static void main(String[] args) {
+        BinarySearchTree bst=new BinarySearchTree();
+        bst.insert(32,1);
+        bst.insert(2,1);
+        bst.insert(3,1);
+        bst.insert(6,1);
+        bst.insert(9,1);
+        bst.insert(23,1);
+        bst.insert(11,1);
+        bst.insert(4,1);
+        System.out.println(bst.size);
+    }
     /**
      * ¸ù½Úµã
      */
