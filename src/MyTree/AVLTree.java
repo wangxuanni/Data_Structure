@@ -12,6 +12,7 @@ public class AVLTree<K, V> extends BinarySearchTree<K, V> implements IBinarySear
         avlt.insert(11,1);
         avlt.insert(4,1);
         System.out.println(avlt.size);
+        System.out.println(!avlt.unBalance(avlt.root));
     }
 
     @Override
