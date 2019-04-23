@@ -1,19 +1,24 @@
 package MyTree;
-// 涉及到的类前面博客都有
+
 public class AVLTree<K, V> extends BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     public static void main(String[] args) {
-        AVLTree avlt=new AVLTree();
-        avlt.insert(32,1);
-        avlt.insert(2,1);
-        avlt.insert(3,1);
-        avlt.insert(6,1);
-        avlt.insert(9,1);
-        avlt.insert(23,1);
-        avlt.insert(11,1);
-        avlt.insert(4,1);
-        System.out.println(avlt.size);
-        System.out.println(!avlt.unBalance(avlt.root));
+        AVLTree avlt = new AVLTree();
+        avlt.insert(2, 1);
+        avlt.insert(6, 1);
+        avlt.insert(9, 1);
+        avlt.insert(23, 1);
+        avlt.insert(11, 1);
+        avlt.insert(4, 1);
+//toString方法可调用层次遍历输出
+        System.out.println(avlt);
+        System.out.println("------------");
+
+     /*   avlt.remove(4);
+        System.out.println(avlt);
+
+        System.out.println("------------");*/
     }
+
 
     @Override
     public BSTNode<K, V> insert(K key, V value) {
@@ -66,12 +71,13 @@ public class AVLTree<K, V> extends BinarySearchTree<K, V> implements IBinarySear
         if (g == null)
             return null;
         if (unBalance(g)) {// 不平衡了
-            return new BSTNode[] { g, p, s };
+            return new BSTNode[]{g, p, s};
         } else {
             return firstUnbalance(p);
         }
 
     }
+
     private void reBalance(BSTNode<K, V> node) {
         if (node == null)
             return;
@@ -99,6 +105,10 @@ public class AVLTree<K, V> extends BinarySearchTree<K, V> implements IBinarySear
                 || unBalance(g.right)
                 || unBalance(g.left);
     }
+
+    public void remove2(K key) {
+    }
+
     @Override
     public void remove(K key) {
         BSTNode<K, V> node = super.lookupNode(key);

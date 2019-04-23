@@ -1,29 +1,25 @@
 package MyTree;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
+
+import java.util.*;
 import java.util.function.Consumer;
 
 /**
  * 二叉搜索树
- *
  */
 public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     public static void main(String[] args) {
-        BinarySearchTree bst=new BinarySearchTree();
-        bst.insert(32,1);
-        bst.insert(2,1);
-        bst.insert(3,1);
-        bst.insert(6,1);
-        bst.insert(9,1);
-        bst.insert(23,1);
-        bst.insert(11,1);
-        bst.insert(4,1);
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.insert(32, 1);
+        bst.insert(2, 1);
+        bst.insert(3, 1);
+        bst.insert(6, 1);
+        bst.insert(9, 1);
+        bst.insert(23, 1);
+        bst.insert(11, 1);
+        bst.insert(4, 1);
         System.out.println(bst.size);
     }
+
     /**
      * 根节点
      */
@@ -101,6 +97,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
 
     /**
      * 中序遍历
+     *
      * @param con 处理中序遍历的每个元素的函数
      */
     @Override
@@ -305,9 +302,9 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     }
 
 
-
     /**
      * 获取树的节点数
+     *
      * @return
      */
     @Override
@@ -360,6 +357,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
         }
         return res;
     }
+
     /*右单旋
      *   p
      *   q
@@ -374,6 +372,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             x.parent = p;
             x.isLeftChild = true;
         }
+
         q.right = p;
         p.parent = q;
         p.isLeftChild = false;
