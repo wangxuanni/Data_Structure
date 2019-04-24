@@ -1,5 +1,5 @@
 package Link;
-
+//链表节点类
 public class Node<T> {
 
     public int data;

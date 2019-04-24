@@ -3,6 +3,7 @@ package MyStack;
 import java.beans.Expression;
 import java.io.IOException;
 import java.util.Stack;
+//检查表达式是否匹配的栈
 public class BracketStack {
 
     public static void main(String args[]) {

@@ -1,7 +1,7 @@
 package MyTree;
 
 import java.util.Scanner;
-
+//猜动物类游戏，运行试试
 public class GuessAnimal {
     private static Scanner stdin = new Scanner(System.in);
 

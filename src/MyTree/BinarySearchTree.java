@@ -9,15 +9,15 @@ import java.util.function.Consumer;
 public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        bst.insert(32, 1);
+        /*bst.insert(32, 1);
         bst.insert(2, 1);
         bst.insert(3, 1);
         bst.insert(6, 1);
         bst.insert(9, 1);
-        bst.insert(23, 1);
+        bst.insert(23, 1);*/
         bst.insert(11, 1);
         bst.insert(4, 1);
-        System.out.println(bst.size);
+        System.out.println(bst.toString());
     }
 
     /**
@@ -325,15 +325,52 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     }
 
 
+    public List<List<BSTNode<K, V>>> levelOrder2(BSTNode<K, V> x) {
+        List<List<BSTNode<K, V>>> res = new ArrayList<>();
+        Queue<BSTNode<K, V>> q = new LinkedList<>();//!
+        q.add(x);
+        BSTNode<K, V> last = x;
+        BSTNode<K, V> nlast = null;
+
+        List<BSTNode<K, V>> l = new ArrayList<>();
+        res.add(l);
+
+        while (!q.isEmpty()) {
+            BSTNode<K, V> n = q.peek();
+            if (n.left != null) {
+                n.left.num = n.num * 2;
+                q.add(n.left);
+                nlast = n.left;
+            }  if (n.right != null) {
+                n.right.num = n.num * 2 + 1;
+                q.add(n.right);
+                nlast = n.right;
+            }
+
+            l.add(q.poll());//!!
+            if (n == last && q != null) {
+                l = new ArrayList<>();
+                res.add(l);
+                last = nlast;
+            }
+
+
+        }
+
+        return res;
+    }
+
     public List<List<BSTNode<K, V>>> levelOrder(BSTNode<K, V> x) {
         // int num=x.num;//累进的编号
         List<List<BSTNode<K, V>>> res = new ArrayList<>();
         Queue<BSTNode<K, V>> q = new LinkedList<>();
         q.add(x);
-        BSTNode<K, V> last = x;
-        BSTNode<K, V> nLast = null;
+
+        BSTNode<K, V> last = x;//再最新一个list层是
+        BSTNode<K, V> nLast = null;//跟着最新加入结点走的指针
         List<BSTNode<K, V>> l = new ArrayList<>();
         res.add(l);
+
         while (!q.isEmpty()) {
             BSTNode<K, V> peek = q.peek();
             //把即将弹出的节点的子节点加入队列
@@ -352,7 +389,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             if (peek == last && !q.isEmpty()) {//如果现在弹出的节点是之前标记的最后节点，就要换列表
                 l = new ArrayList<>();
                 res.add(l);
-                last = nLast;
+                last = nLast;//最后加的元素的下一层的last
             }
         }
         return res;
@@ -428,7 +465,7 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     @Override
     public List<List<BSTNode<K, V>>> levelOrder() {
         root.num = 1;
-        return levelOrder(root);
+        return levelOrder2(root);
     }
 
     // 按照格式打印

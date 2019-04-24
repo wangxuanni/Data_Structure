@@ -1,7 +1,7 @@
 package MyTree;
-
+//二叉决策树
 public class BTNode {
-    //二叉决策树
+
     private String data;
     private BTNode left;
     private BTNode right;

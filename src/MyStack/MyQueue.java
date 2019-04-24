@@ -1,5 +1,5 @@
 package MyStack;
-
+//数组实现队列
 public class MyQueue {
 
     String []sta=new String[7];

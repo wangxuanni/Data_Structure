@@ -1,5 +1,5 @@
 package MyStack;
-
+//数组实现栈
 public class MyStack {
 
     String []sta=new String[7];

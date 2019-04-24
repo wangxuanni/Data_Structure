@@ -5,7 +5,7 @@ import java.util.Iterator;
 /**
  * @parameter:
  * @return:
- * @description:
+ * @description:链表类接口，约定方法
  * @author: Wang
  * @create: 2019-04-11 19:05
  **/

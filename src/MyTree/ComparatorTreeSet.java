@@ -2,7 +2,7 @@ package MyTree;
 
 import java.util.Comparator;
 import java.util.TreeSet;
-
+//Comparator”√ µœ÷µπ–ÚTreeSet
 public class ComparatorTreeSet {
     public static void main(String[] args) {
         Comparator<Integer> c=new Comparator<Integer>(){

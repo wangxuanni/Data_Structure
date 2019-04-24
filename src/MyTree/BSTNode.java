@@ -1,5 +1,5 @@
 package MyTree;
-
+//二叉查找树节点类
     public class BSTNode<K, V> {
         public K key;
         public V value;

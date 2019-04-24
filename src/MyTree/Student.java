@@ -1,7 +1,7 @@
 package MyTree;
 
 import java.util.*;
-//学生类
+//学生类，用于测试，可无视
 public class Student {
     public static void main(String[] args) {
         Student s1=new Student("tom",13);

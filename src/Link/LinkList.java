@@ -1,5 +1,5 @@
 package Link;
-
+//¡¥±Ì¿‡
 public class LinkList<T> implements MyList<T> {
     Node head;
     Node last;
