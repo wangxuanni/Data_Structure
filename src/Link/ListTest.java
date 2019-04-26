@@ -23,8 +23,8 @@ public class ListTest {
         deleteCopy(in2);
         System.out.println(in2);
 
-    }//1、两个链表加法
-
+    }
+    //FindKthToTail
     static void deleteCopy(LinkList ll) {
         HashSet hs = new HashSet();
         Node p = ll.head;
@@ -44,6 +44,7 @@ public class ListTest {
             p = p.next;
         }
     }
+//1、两个链表加法
 
     static Node plusAB(Node a, Node b, int i) {
         if (a == null && b == null && i == 0) {
@@ -63,7 +64,7 @@ public class ListTest {
         return r;
     }
 
-    static Node huan(Node head) {
+    static Node hasCircle(Node head) {
         Node f = head;
         Node s = head;
         while (f != null && f.next != null) {
@@ -83,7 +84,7 @@ public class ListTest {
         }
         return s;
     }
-
+    //一个给有环链表，返回环路的开头结点。
     static int huanHS(Node head) {
         HashSet hs = new HashSet();
         Node p = head;
@@ -97,8 +98,10 @@ public class ListTest {
         }
     }
 
-
-    static Node partionByE(int i, LinkList ll) {
+    /*以给定值x为基准将链表分为两部分，
+    注意：
+    分割以后原来的数据顺序不变，不要开辟新的空间，即不要新建节点。*/
+    static Node partitionByE(int i, LinkList ll) {
         Node p = ll.head;
         Node leftFirst = null;
         Node leftTail = null;
@@ -138,8 +141,9 @@ public class ListTest {
         return leftFirst;
     }
 
-
-    static void deleteSomeNode(Node n) {
+/*
+    删除单向链表中的某个节点，假定你只能访问该节点。*/
+    static void removeNode(Node n) {
         if (n.next == null) {
             return;//n是最后一个，没法删
         }

@@ -3,9 +3,6 @@ package MyTree;
 import java.util.List;
 import java.util.function.Consumer;
 
-
-  import java.util.List;
-  import java.util.function.Consumer;
 //二叉查找树接口
     public interface IBinarySearchTree<K, V> {
         /**
