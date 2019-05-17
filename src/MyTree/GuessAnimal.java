@@ -1,7 +1,7 @@
 package MyTree;
 
 import java.util.Scanner;
-//çŒœåŠ¨ç‰©ç±»æ¸¸æˆï¼Œè¿è¡Œè¯•è¯•
+//²Â¶¯ÎïÀàÓÎÏ·£¬ÔËĞĞÊÔÊÔ
 public class GuessAnimal {
     private static Scanner stdin = new Scanner(System.in);
 
@@ -9,15 +9,15 @@ public class GuessAnimal {
         BTNode root;
         BTNode child;
 
-        root = new BTNode("æœ‰å››æ¡è…¿å—", null, null);
-        child = new BTNode("æœ‰å°¾å·´å—", null, null);
-        child.setRight(new BTNode("é’è›™", null, null));
-        child.setLeft(new BTNode("ç‹—", null, null));
+        root = new BTNode("ÓĞËÄÌõÍÈÂğ", null, null);
+        child = new BTNode("ÓĞÎ²°ÍÂğ", null, null);
+        child.setRight(new BTNode("ÇàÍÜ", null, null));
+        child.setLeft(new BTNode("¹·", null, null));
         root.setLeft(child);
 
-        child = new BTNode("åœ¨æ°´ä¸‹ç”Ÿæ´»å—", null, null);
-        child.setRight(new BTNode("äºº", null, null));
-        child.setLeft(new BTNode("é±¼", null, null));
+        child = new BTNode("ÔÚË®ÏÂÉú»îÂğ", null, null);
+        child.setRight(new BTNode("ÈË", null, null));
+        child.setLeft(new BTNode("Óã", null, null));
         root.setRight(child);
 
         return root;
@@ -30,11 +30,11 @@ public class GuessAnimal {
             else
                 current = current.getRight();
         }
-        System.out.println("æˆ‘çŒœæ˜¯" + current.getData());
-        if (!query("æˆ‘çŒœçš„å¯¹å—"))
-            learn(current);                         //æŠŠæˆ‘çŒœé”™çš„é‚£ä¸ªåŠ¨ç‰©ä¼ å…¥learnå‡½æ•°é‡Œï¼Œcurrent
+        System.out.println("ÎÒ²ÂÊÇ" + current.getData());
+        if (!query("ÎÒ²ÂµÄ¶ÔÂğ"))
+            learn(current);                         //°ÑÎÒ²Â´íµÄÄÇ¸ö¶¯Îï´«Èëlearnº¯ÊıÀï£¬current
         else
-            System.out.println("hahahaæˆ‘çŸ¥é“ä¸€åˆ‡ï¼");
+            System.out.println("hahahaÎÒÖªµÀÒ»ÇĞ£¡");
 
 
     }
@@ -43,15 +43,15 @@ public class GuessAnimal {
         String guessAnimal;
         String correctAnimal;
         String newQuestion;
-        guessAnimal = current.getData();             //æŠŠçŒœé”™çš„åŠ¨ç‰©ä¿å­˜åˆ°ä¸€ä¸ªstringé‡Œ
-        System.out.println("æˆ‘è¾“å•¦ï¼Œæ˜¯ä»€ä¹ˆåŠ¨ç‰©ï¼Ÿ");
-        correctAnimal = stdin.nextLine();           //æŠŠç­”æ¡ˆä¿å­˜åˆ°ä¸€ä¸ªstringé‡Œ
-        System.out.println("è¯·ç»™å‡ºé—®é¢˜æ¥åˆ†åˆ«" + correctAnimal + "å’Œ" + guessAnimal);
-        newQuestion = stdin.nextLine() + "å—";
+        guessAnimal = current.getData();             //°Ñ²Â´íµÄ¶¯Îï±£´æµ½Ò»¸östringÀï
+        System.out.println("ÎÒÊäÀ²£¬ÊÇÊ²Ã´¶¯Îï£¿");
+        correctAnimal = stdin.nextLine();           //°Ñ´ğ°¸±£´æµ½Ò»¸östringÀï
+        System.out.println("Çë¸ø³öÎÊÌâÀ´·Ö±ğ" + correctAnimal + "ºÍ" + guessAnimal);
+        newQuestion = stdin.nextLine() + "Âğ";
 
         current.setData(newQuestion);
         System.out.println(correctAnimal + "," + newQuestion);
-        if (query("è¯·å›ç­”")) {//å¦‚æœè¿™ä¸ªé—®é¢˜yesæ˜¯æ­£ç¡®ç­”æ¡ˆï¼Œåˆ™æŠŠå®ƒæ”¾åˆ°å·¦è¾¹
+        if (query("Çë»Ø´ğ")) {//Èç¹ûÕâ¸öÎÊÌâyesÊÇÕıÈ·´ğ°¸£¬Ôò°ÑËü·Åµ½×ó±ß
 
             current.setLeft(new BTNode(correctAnimal, null, null));
             current.setRight(new BTNode(guessAnimal, null, null));
@@ -60,12 +60,12 @@ public class GuessAnimal {
             current.setLeft(new BTNode(guessAnimal, null, null));
         }
 
-        System.out.println("è°¢è°¢ä½ æ•™ç»™æˆ‘è¿™ä¸ª");
+        System.out.println("Ğ»Ğ»Äã½Ì¸øÎÒÕâ¸ö");
 
     }
 
     public static boolean query(String prompt) {
-        //ä¼ å…¥é—®é¢˜ï¼ŒåŠ ä¸Š"Y or N"ï¼Œå¹¶ä¸”å¾—åˆ°ç­”æ¡ˆä¸åˆ†å¤§å°å†™çš„ä¼ å›å»
+        //´«ÈëÎÊÌâ£¬¼ÓÉÏ"Y or N"£¬²¢ÇÒµÃµ½´ğ°¸²»·Ö´óĞ¡Ğ´µÄ´«»ØÈ¥
         String answer;
         System.out.println(prompt + "Y or N");
         answer = stdin.nextLine().toUpperCase();
@@ -80,9 +80,9 @@ public class GuessAnimal {
         do {
             play(root);
         }
-        while (query("ä½ æƒ³å†æ¥ç©ä¸€æ¬¡å—"));
+        while (query("ÄãÏëÔÙÀ´ÍæÒ»´ÎÂğ"));
 
-        System.out.println("é‚£å¥½ï¼Œå†è§");
+        System.out.println("ÄÇºÃ£¬ÔÙ¼û");
     }
 
 }

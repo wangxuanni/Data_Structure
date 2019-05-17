@@ -9,15 +9,14 @@ import java.util.function.Consumer;
 public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
-        /*bst.insert(32, 1);
+        bst.insert(32, 1);
         bst.insert(2, 1);
         bst.insert(3, 1);
         bst.insert(6, 1);
         bst.insert(9, 1);
-        bst.insert(23, 1);*/
+        bst.insert(23, 1);
         bst.insert(11, 1);
         bst.insert(4, 1);
-        System.out.println(bst.toString());
     }
 
     /**
@@ -108,6 +107,15 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
     }
 
     /* µ›πÈ–Œ Ω */
+    private void myInorder(BSTNode<K, V> p) {
+        if (p==null) {
+            return;
+        }
+        myInorder(p.left);
+        System.out.println(p.key);
+        myInorder(p.right);
+    }
+
     private void inorder(BSTNode<K, V> p, Consumer<K> con) {
         if (p != null) {
             inorder(p.left, con);
@@ -341,7 +349,8 @@ public class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
                 n.left.num = n.num * 2;
                 q.add(n.left);
                 nlast = n.left;
-            }  if (n.right != null) {
+            }
+            if (n.right != null) {
                 n.right.num = n.num * 2 + 1;
                 q.add(n.right);
                 nlast = n.right;
